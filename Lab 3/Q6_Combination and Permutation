@@ -1,0 +1,29 @@
+// Permutation(nPr) and Combination (nCr)
+
+#include <stdio.h>
+
+int fact(int n)
+{
+    int f = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        f = f * i;
+    }
+    return f;
+}
+
+int main()
+{
+    int n, r;
+    scanf("%d %d", &n, &r);
+
+    int npr;
+    int ncr;
+    npr = fact(n) / fact(n - r);
+    ncr = fact(n) / (fact(n - r) * fact(r));
+
+    printf("Value of %dP%d is : %d\n", n, r, npr);
+    printf("Value of %dC%d is : %d", n, r, ncr);
+
+    return 0;
+}
