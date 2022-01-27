@@ -1,0 +1,27 @@
+//Palindrome
+// reverse the no. then check they are same or not
+
+#include<stdio.h>
+
+int main(){
+    int n;
+    int remainder;
+    int reverse = 0;
+    scanf("%d", &n);
+
+   int OriginalNum = n;  
+
+    while(n!=0){
+       remainder = OriginalNum % 10;
+       reverse = reverse*10 + remainder;  //mul by 10 to make number tens digit then 100's digit
+       OriginalNum = OriginalNum/10;  //removing that no.
+    }
+
+    if(n == reverse){
+        printf("Palindrome number");
+    }
+    else{
+        printf("Not palindrome number");
+    }
+    return 0;
+}
