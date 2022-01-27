@@ -1,0 +1,32 @@
+// Checking two interger are co-prime or not
+// for prime GCD == 1
+// if both of the no. is multiple of any (min-1) then they are not co-prime number
+
+#include <stdio.h>
+
+int main()
+{
+    int flag = 1;
+    int n1;
+    int n2;
+    scanf("%d", &n1);
+    scanf("%d", &n2);
+
+    int min = n1 < n2 ? n1 : n2; //checking for min no.
+
+    for (int i = 2; i <= min; i++) //running the loop till min agar bech me ek se bhi multiple hua to non co-prime no.
+    {
+
+        if (n1 % i == 0 && n2 % i == 0)
+        {
+            printf("No. is not co-prime");
+            flag = 0;
+            break;
+        }
+    }
+    if (flag)
+    {
+        printf("No.'s are co-prime");
+    }
+    return 0;
+}
