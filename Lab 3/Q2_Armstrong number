@@ -1,0 +1,26 @@
+//Code for 3-digit Armstrong number
+// Example: Input: 153; Output: Armstrong number (i.e., 153 = 13 + 53 + 33)
+
+#include<stdio.h>
+
+int main(){
+    int n;
+    int remainder;
+    int ans = 0;
+    scanf("%d", &n);
+   
+    int num = n;   //doing this will not change the original no.
+    while(num!=0){
+        remainder = num % 10;
+       ans += remainder*remainder*remainder;
+       num = num/10; 
+    }
+
+    if(n == ans){              //so that we can easily compare with the original no.
+        printf("No. is armstrong no.");
+    }
+    else{
+        printf("No. is not armstrong no.");
+    }
+    return 0;
+}
