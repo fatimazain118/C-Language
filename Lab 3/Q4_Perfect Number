@@ -1,0 +1,29 @@
+// Perfect no. is sum of all divisors
+// For instance, 6 has divisors 1, 2 and 3 (excluding itself), and 1 + 2 + 3 = 6; so 6 is a perfect number.
+
+#include <stdio.h>
+
+int main()
+{
+    int n, remainder, sum = 0;
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n/2; i++)
+    {
+        //if divisible means its a divisor
+             if (n%i == 0)
+        {
+            sum += i; //if a divisor add to sum
+        }
+    }
+    if (sum == n)
+    {
+        printf("%d is a Perfect number", n);
+    }
+    else
+    {
+        printf("%d is not a Perfect number", n);
+    }
+
+    return 0;
+}
