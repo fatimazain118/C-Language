@@ -1,0 +1,23 @@
+// Find LCM(Least Common Multiple) of 2 no.
+// It should be least multiple of both digits
+
+#include <stdio.h>
+
+int main()
+{
+    int n1, n2;
+    scanf("%d %d", &n1, &n2);
+
+    int max = n1 < n2 ? n2 : n1;  //agar max wale se dekh liya min divisor ara to dono se hojaiga
+
+    while (1)
+    {
+        if (max % n1 == 0 && max % n2 == 0)
+        {
+            printf("LCM of %d and %d is %d", n1, n2, max);
+            break;   
+        }
+        max++;
+    }
+    return 0;
+}
