@@ -1,0 +1,35 @@
+// Amicable numbers are found in pairs. A given pair of numbers is Amicable if the sum of the
+// proper divisors (not including itself) of one number is equal to the other number, and vice-versa.
+// For example 220 & 284 are amicable numbers. First we find the proper divisors of 220.
+// 220: 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110;
+// 1+ 2 + 4 + 5 + 10 + 11 + 20 + 22 + 44 + 55 + 110 = 284;
+// Now, 284: 1, 2, 4, 71, 142;
+// 1 + 2 + 4 + 71 + 142 = 220
+
+#include<stdio.h>
+
+int main(){
+    int n1,n2;
+    int sum1 = 0;
+    int sum2 = 0;
+    scanf("&d &d", &n1, &n2);
+
+    for(int i = 1; i<n1/2; i++){
+        if(n1%i == 0){
+            sum1 = sum1+i;
+        }
+    }
+    for(int i = 1; i<n2/2; i++){
+        if(n2%i == 0){
+            sum2 = sum2+i;
+        }
+    }
+
+    if(sum1 == n2 || sum2 == n1){
+        printf("Amicable number");
+    }
+    else{
+        printf("Not Amicable number");
+    }
+    return 0;
+}
