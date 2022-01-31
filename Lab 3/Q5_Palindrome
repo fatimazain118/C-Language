@@ -11,7 +11,7 @@ int main(){
 
    int OriginalNum = n;  
 
-    while(n!=0){
+    while(OriginalNum!=0){
        remainder = OriginalNum % 10;
        reverse = reverse*10 + remainder;  //mul by 10 to make number tens digit then 100's digit
        OriginalNum = OriginalNum/10;  //removing that no.
